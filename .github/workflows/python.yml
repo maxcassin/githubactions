@@ -1,15 +1,19 @@
-name: Exercice secrets written in workflow
-on: 
-    workflow_dispatch
+name: Python Workflow
+
+on:
+  workflow_dispatch:
 
 jobs:
-  test:
+  pythoncommands:
+    permissions:
+      id-token: write # Require write permission to Fetch an OIDC token.
+
     runs-on: ubuntu-latest
+
     steps:
     - name: Azure login
       uses: azure/login@v2
       with:
-        auth-type: IDENTITY
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
