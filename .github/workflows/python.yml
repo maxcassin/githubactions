@@ -1,4 +1,4 @@
-name: Run Azure Login with user-assigned managed identity
+name: Exercice secrets written in workflow
 on: [push]
 
 jobs:
